@@ -43,9 +43,11 @@ export default defineConfigWithVueTs(
 		arrowParens: true,
 		semi: true,
 	}),
+
 	{
 		rules: {
 			"@stylistic/dot-location": ["error", "property"],
+			"vue/multi-word-component-names": "off",
 		},
 	},
 );

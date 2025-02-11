@@ -14,7 +14,8 @@
 		"build-only": "vite build",
 		"type-check": "vue-tsc --build",
 		"lint": "eslint . --fix",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"preinstall": "npx only-allow pnpm"
 	},
 	"dependencies": {
 		"@primevue/themes": "^4.2.5",
@@ -46,9 +47,18 @@
 		"start-server-and-test": "^2.0.10",
 		"typescript": "~5.7.3",
 		"unplugin-vue-components": "^28.0.0",
+		"unplugin-vue-router": "^0.11.2",
 		"vite": "^6.0.11",
 		"vite-plugin-vue-devtools": "^7.7.0",
 		"vue-tsc": "^2.2.0"
 	},
-	"packageManager": "pnpm@10.2.0"
+	"engines": {
+		"pnpm": ">=10.0.0"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"cypress",
+			"esbuild"
+		]
+	}
 }
